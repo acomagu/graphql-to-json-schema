@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "@acomagu/graphql-to-json-schema",
+  "version": "0.0.2",
+  "main": "./mod.js",
+  "files": [
+    "*.js",
+    "*.ts"
+  ],
+  "scripts": {
+    "test": "node --loader ts-node/esm --enable-source-maps --test index.ts",
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "graphql": "*"
+  },
+  "devDependencies": {
+    "@types/json-schema": "^7.0.13",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
+  }
+}
