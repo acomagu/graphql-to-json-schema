@@ -6,7 +6,6 @@ import {
   AppShell,
   Code,
   Divider,
-  Flex,
   Group,
   Input,
   ScrollArea,
@@ -21,6 +20,7 @@ import '@mantine/core/styles.css';
 import { IconBrandGithub, IconMoon, IconSun } from '@tabler/icons-react';
 import * as graphql from 'graphql';
 import { useState } from "react";
+import classes from './Playground.module.css';
 
 const sampleGqlSchema = `
 type Query {
@@ -69,7 +69,7 @@ function Playground() {
   const [gqlSchemaStr, setGqlSchemaStr] = useState<string>(sampleGqlSchema);
   const [typeName, setTypeName] = useState<string | undefined>('Query');
 
-  return <Flex h="100%">
+  return <div className={classes.playground}>
     <Stack h="100%" flex={1}>
       <Textarea
         flex={1}
@@ -93,11 +93,12 @@ function Playground() {
       ></Textarea>
       <TypeNameSelect gqlSchemaInput={gqlSchemaStr} value={typeName} onChange={setTypeName} />
     </Stack>
-    <Divider orientation="vertical" ml="lg" mr="lg" />
+    <Divider orientation="vertical" ml="lg" mr="lg" className={classes['playground-divider-vertical']} />
+    <Divider orientation="horizontal" mt="lg" mb="lg" className={classes['playground-divider-horizontal']} />
     <ScrollArea flex={1}>
       <Result gqlSchemaInput={gqlSchemaStr} convertedTypeName={typeName} />
     </ScrollArea>
-  </Flex>;
+  </div>;
 }
 
 function Result(props: { gqlSchemaInput: string, convertedTypeName: string | undefined }) {
@@ -145,9 +146,9 @@ export function App() {
     padding="lg"
   >
     <AppShell.Header ps="lg" pe="lg">
-      <Group justify="space-between">
-        <Title order={1} lh="60px" fw="normal">GraphQL to JSON Schema Playground</Title>
-        <Group>
+      <Group justify="space-between" wrap="nowrap">
+        <Title order={1} lh="60px" fw="normal" style={{ fontSize: 'min(calc(6vw - 10px), var(--mantine-h1-font-size))' }}>GraphQL to JSON Schema Playground</Title>
+        <Group wrap="nowrap">
           <ActionIcon
             component="a"
             href="https://github.com/acomagu/graphql-to-json-schema"

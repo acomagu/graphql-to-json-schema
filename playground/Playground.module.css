@@ -1,0 +1,22 @@
+.playground {
+  display: flex;
+  height: 100%;
+}
+
+.playground-divider-horizontal {
+  display: none;
+}
+
+@media (max-width: 30em) {
+  .playground {
+    flex-direction: column;
+  }
+
+  .playground-divider-horizontal {
+    display: block;
+  }
+
+  .playground-divider-vertical {
+    display: none;
+  }
+}
