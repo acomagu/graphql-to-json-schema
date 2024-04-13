@@ -1,5 +1,7 @@
 # GraphQL Schema to JSON Schema converter
 
+[Playground](https://acomagu.github.io/graphql-to-json-schema/)
+
 ## Installation
 
 ```

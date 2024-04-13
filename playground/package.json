@@ -1,0 +1,22 @@
+{
+  "name": "@acomagu/graphql-to-json-schema-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@acomagu/graphql-to-json-schema": "^0.0.2",
+    "@mantine/code-highlight": "^7.7.2",
+    "@mantine/core": "^7.7.2",
+    "@tabler/icons-react": "^3.2.0",
+    "graphql": "^16.8.1",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.77",
+    "@types/react-dom": "^18.2.25",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.2.8"
+  }
+}
