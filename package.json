@@ -8,7 +8,7 @@
     "*.ts"
   ],
   "scripts": {
-    "test": "node --loader ts-node/esm --enable-source-maps --test index.ts",
+    "test": "node --loader ts-node/esm --enable-source-maps --test test.ts",
     "build": "tsc"
   },
   "peerDependencies": {
